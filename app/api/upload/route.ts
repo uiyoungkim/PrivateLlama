@@ -28,7 +28,7 @@ export const POST = async (req: NextRequest) => {
 
   const singleVector = await embeddings.embedQuery("test");
 
-  const loader = new PDFLoader(pdfBlob);
+  const loader = new WebPDFLoader(pdfBlob);
   const docs = await loader.load();
   const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1000,
