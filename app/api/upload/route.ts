@@ -15,7 +15,7 @@ export const POST = async (req: NextRequest) => {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
   const buffer = Buffer.from(await file.arrayBuffer());
-  // const blob = new Blob([buffer], { type: "application/pdf" });
+
   const pdfBlob = new Blob([buffer], { type: "application/pdf" });
 
   const embeddings = new OllamaEmbeddings({
@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
     },
   });
 
-  const singleVector = await embeddings.embedQuery("test");
+  // const singleVector = await embeddings.embedQuery("test");
 
   const loader = new WebPDFLoader(pdfBlob);
   const docs = await loader.load();
