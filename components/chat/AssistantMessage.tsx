@@ -1,42 +1,36 @@
+"use client";
+
 import "@copilotkit/react-ui/styles.css";
 import { AssistantMessageProps, Markdown } from "@copilotkit/react-ui";
-import { useCopilotChat } from "@copilotkit/react-core";
+import { BotIcon } from "lucide-react";
 
 export const CustomAssistantMessage = (props: AssistantMessageProps) => {
-  const { message, isLoading, isGenerating, subComponent, rawData } = props;
-  console.log(props);
-  //{!isGenerating && !isLoading && <ResponseButtons id={id} />}
-  const id = rawData?.id;
+  const { message, isLoading, subComponent } = props;
+
   return (
-    <div>
-      <div>
-        {!subComponent && <div />}
-        {subComponent ? (
-          subComponent
-        ) : (
-          <>
-            {message && <Markdown content={message || ""} />}
-            {isLoading && (
-              <div>
-                <p>Loading...</p>
-              </div>
-            )}
-          </>
-        )}
+    <div className="flex justify-start mb-2 px-4">
+      <div className="flex items-start gap-2 max-w-[75%]">
+        {/* fix icon big */}
+        <BotIcon
+          className="text-gray-400 mt-1 min-w-[20px] min-h-[20px]"
+          size={20}
+        />
+
+        <div className="bg-gray-100 text-black px-4 py-2 rounded-lg text-sm whitespace-pre-wrap">
+          {subComponent ? (
+            subComponent
+          ) : (
+            <>
+              {message && <Markdown content={message || ""} />}
+              {isLoading && (
+                <p className="text-sm text-gray-500 italic">
+                  Your Answer is loading...
+                </p>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
-};
-
-const ResponseButtons = ({ id }: { id: string }) => {
-  const { reloadMessages, visibleMessages } = useCopilotChat();
-  const isLastMessage = visibleMessages[visibleMessages.length - 1]?.id === id;
-  /*
-      <p>How was this response?</p>
-      <Button onClick={() => alert("Thumbs up sent")}></Button>
-      <Button onClick={() => alert("Thumbs down sent")}></Button>
-      <Button onClick={() => reloadMessages()}></Button>
-*/
-
-  return <div>{isLastMessage && <div></div>}</div>;
 };
