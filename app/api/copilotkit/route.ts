@@ -3,10 +3,9 @@ import {
   LangChainAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
-/*
+
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatOpenAI } from "@langchain/openai";
-*/
 import { ChatOllama } from "@langchain/ollama";
 import { NextRequest } from "next/server";
 
@@ -14,7 +13,7 @@ import { OllamaEmbeddings } from "@langchain/ollama";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { createClient } from "@supabase/supabase-js";
 
-const model = new ChatOllama({ model: "llama3.2:1b", temperature: 0.3 });
+const model = new ChatOllama({ model: "llama3.2:1b", temperature: 0 });
 const serviceAdapter = new LangChainAdapter({
   chainFn: async ({ messages, tools }) => {
     console.log(messages);
