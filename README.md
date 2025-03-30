@@ -30,7 +30,8 @@ npm run docker:setup
 ollama pull mxbai-embed-large
 
 # (Optional) LLM lokal laufen lassen, z. B. llama3
-ollama run llama3:8b
+ollama run llama3.2:1b
 
 # 5. Projekt starten
 npm run dev
+```
