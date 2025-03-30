@@ -34,6 +34,7 @@ export function Chat({ className }: { className?: string }) {
   });
 
   // 💾 Save History in LocalStorage
+  // Documentation: https://docs.copilotkit.ai/guides/messages-localstorage
   useEffect(() => {
     if (messages.length > 0) {
       localStorage.setItem("copilotkit-messages", JSON.stringify(messages));
