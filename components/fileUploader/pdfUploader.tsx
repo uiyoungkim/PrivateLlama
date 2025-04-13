@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { cva } from "class-variance-authority";
 
 const fileInputStyles = cva(
-  "border border-dashed border-gray-300 p-4 rounded-lg text-center cursor-pointer hover:bg-gray-100",
+  "border border-dashed border-gray-300 p-4 rounded-lg text-center cursor-pointer hover:bg-gray-200",
   {
     variants: {
       isDragging: {

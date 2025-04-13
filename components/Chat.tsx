@@ -14,6 +14,7 @@ import {
   ActionExecutionMessage,
   ResultMessage,
 } from "@copilotkit/runtime-client-gql";
+import { Button } from "@/components/ui/button";
 
 export function Chat({ className }: { className?: string }) {
   const { messages, setMessages } = useCopilotMessagesContext();
@@ -84,7 +85,7 @@ export function Chat({ className }: { className?: string }) {
 
   return (
     <div
-      className={`flex flex-col bg-background border rounded-xl shadow-md max-w-4xl w-full mx-auto h-[80vh] ${className}`}
+      className={`flex flex-col bg-background border rounded-xl shadow-md max-w-6xl w-full mx-auto h-[85vh] mt-2 ${className}`}
     >
       <Header />
 
@@ -100,16 +101,17 @@ export function Chat({ className }: { className?: string }) {
       </div>
 
       {/* 🧼 Delete History */}
-      <div className="px-4 pb-4 text-center">
-        <button
+      <div className="px-4 pb-4 pt-3 text-center">
+        <Button
           onClick={() => {
             localStorage.removeItem("copilotkit-messages");
             setMessages([]);
           }}
-          className="text-sm text-red-500 underline hover:text-red-700 transition"
+          variant="destructive"
+          size="sm"
         >
           Verlauf löschen
-        </button>
+        </Button>
       </div>
     </div>
   );
