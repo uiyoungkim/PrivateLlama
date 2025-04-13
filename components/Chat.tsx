@@ -15,8 +15,15 @@ import {
   ResultMessage,
 } from "@copilotkit/runtime-client-gql";
 import { Button } from "@/components/ui/button";
+import { createPortal } from "react-dom";
 
-export function Chat({ className }: { className?: string }) {
+export function Chat({ 
+  className,
+  controlsContainerId,
+}: { 
+  className?: string;
+  controlsContainerId?: string;
+}) {
   const { messages, setMessages } = useCopilotMessagesContext();
 
   // 🧠 Register CopilotTol
@@ -83,36 +90,51 @@ export function Chat({ className }: { className?: string }) {
     }
   }, []);
 
+  // Function to clear chat history
+  const clearHistory = () => {
+    localStorage.removeItem("copilotkit-messages");
+    setMessages([]);
+  };
+
+  // Render the clear history button in the controls container
+  const ClearHistoryButton = () => {
+    return (
+      <Button onClick={clearHistory} variant="destructive" size="sm">
+        Verlauf löschen
+      </Button>
+    );
+  };
+
   return (
-    <div
-      className={`flex flex-col bg-background border rounded-xl shadow-md max-w-6xl w-full mx-auto h-[85vh] mt-2 ${className}`}
-    >
-      <Header />
+    <>
+      {/* Render the clear history button in the specified container if available */}
+      {controlsContainerId && typeof document !== 'undefined' && document.getElementById(controlsContainerId) && 
+        createPortal(<ClearHistoryButton />, document.getElementById(controlsContainerId)!)
+      }
 
-      <div className="flex-1 overflow-y-auto px-4 py-2 custom-scrollbar">
-        <CopilotChat
-          UserMessage={CustomUserMessage}
-          AssistantMessage={CustomAssistantMessage}
-          labels={{
-            initial:
-              "Hi! 👋 Ich bin dein digitaler Assistent. Frag mich gerne zu deinen hochgeladenen Dokumenten oder anderen Themen! 📄🤖",
-          }}
-        />
-      </div>
+      <div
+        className={`flex flex-col bg-background border rounded-xl shadow-md max-w-6xl w-full mx-auto h-[85vh] mt-2 ${className}`}
+      >
+        <Header />
 
-      {/* 🧼 Delete History */}
-      <div className="px-4 pb-4 pt-3 text-center">
-        <Button
-          onClick={() => {
-            localStorage.removeItem("copilotkit-messages");
-            setMessages([]);
-          }}
-          variant="destructive"
-          size="sm"
-        >
-          Verlauf löschen
-        </Button>
+        <div className="flex-1 overflow-y-auto px-4 py-2 custom-scrollbar">
+          <CopilotChat
+            UserMessage={CustomUserMessage}
+            AssistantMessage={CustomAssistantMessage}
+            labels={{
+              initial:
+                "Hi! 👋 Ich bin dein digitaler Assistent. Frag mich gerne zu deinen hochgeladenen Dokumenten oder anderen Themen! 📄🤖",
+            }}
+          />
+        </div>
+
+        {/* Clear history button shown here only if no container ID is provided */}
+        {!controlsContainerId && (
+          <div className="px-4 pb-4 pt-3 text-center">
+            <ClearHistoryButton />
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 }

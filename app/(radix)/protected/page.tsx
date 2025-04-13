@@ -18,10 +18,17 @@ export default async function ProtectedPage() {
   return (
     <div className="flex-1 w-full flex flex-col gap-4 p-2">
       <CopilotKit runtimeUrl="/api/copilotkit">
-        <Chat />
+        <div className="w-full flex flex-col">
+          {/* Controls section with Upload and Clear History buttons */}
+          <div className="flex justify-between items-center mb-4 w-full">
+            <FileUploader />
+            <div id="chat-controls"></div>
+          </div>
+          
+          {/* Chat container positioned at the bottom */}
+          <Chat controlsContainerId="chat-controls" />
+        </div>
       </CopilotKit>
-
-      <FileUploader />
     </div>
   );
 }

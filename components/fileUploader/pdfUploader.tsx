@@ -1,11 +1,12 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cva } from "class-variance-authority";
+import { Button } from "@/components/ui/button";
 
 const fileInputStyles = cva(
-  "border border-dashed border-gray-300 p-4 rounded-lg text-center cursor-pointer hover:bg-gray-200",
+  "hidden",
   {
     variants: {
       isDragging: {
@@ -26,6 +27,7 @@ export default function FileUploader({
   onFileSelect,
 }: FileUploaderProps) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -58,19 +60,27 @@ export default function FileUploader({
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <label className={fileInputStyles()}>
+    <div className="flex items-center gap-4">
+      <label>
         <input
           type="file"
           accept={accept}
-          className="hidden"
+          className={fileInputStyles()}
           onChange={handleFileChange}
+          ref={fileInputRef}
         />
-        Upload here
+        <Button 
+          type="button" 
+          variant="outline" 
+          size="sm" 
+          onClick={() => fileInputRef.current?.click()}
+        >
+          Datei hochladen
+        </Button>
       </label>
       {selectedFile && (
-        <p className="text-sm text-gray-700">
-          SelectedFile: {selectedFile.name}
+        <p className="text-sm text-gray-700 ml-2">
+          Selected: {selectedFile.name}
         </p>
       )}
     </div>
