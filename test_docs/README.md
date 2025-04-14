@@ -2,21 +2,21 @@
 
 ## Prompt 1
 ``` 
-Which venues did I play at?
+Is the invoice for GreenTech GmbH paid?  
 ```
-**A:** The following:
-- Hotel Adlon, Berlin
-- Kulturbrauerei Berlin
-- AXICA Berlin 
+**A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
 
 ---
 
 
 ## Prompt 2
 ``` 
-Is the invoice for GreenTech GmbH paid?  
+Which venues did I play at?
 ```
-**A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
+**A:** The following:
+- Hotel Adlon, Berlin
+- Kulturbrauerei Berlin
+- AXICA Berlin 
 
 ---
 
