@@ -22,7 +22,7 @@ Which venues did I play at?
 
 ## Prompt 3
 ```
-When did I play for Max Müller at the Hotel Adlon in Berlin?  
+When did I play at the Hotel Adlon in Berlin?  
 ```
 **A:** You played for Max Müller on March 8, 2025.
 
