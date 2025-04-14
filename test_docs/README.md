@@ -30,14 +30,6 @@ When did I play for Max Müller at the Hotel Adlon in Berlin?
 
 ## Prompt 4
 ```
-Is there an invoice for Lisa Sommer?  
-```
-**A:** Yes, there is an invoice for Lisa Sommer for an event on March 15, 2025.  
-
----
-
-## Prompt 5
-```
  How much did I charge GreenTech GmbH?  
 ```
 **A:** You charged GreenTech GmbH €1,200 for the event on March 22, 2025.
