@@ -18,24 +18,13 @@ When did I play for Max Müller?
 
 ## Prompt 3
 ```
- Who did I send an invoice to in March?  
-```
-**A:** In March 2025, you sent invoices to:
-- Max Müller (March 8, 2025)
-- Lisa Sommer (March 15, 2025)
-- GreenTech GmbH (March 22, 2025)
-
----
-
-## Prompt 4
-```
  Is the invoice for GreenTech GmbH paid?  
 ```
 **A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
 
 ---
 
-## Prompt 5
+## Prompt 4
 ```
  How much did I charge GreenTech GmbH?  
 ```
