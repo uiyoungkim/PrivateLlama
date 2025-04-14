@@ -2,9 +2,9 @@
 
 ## Prompt 1
 ``` 
-Which locations did I play at?
+Which venues did I play at?
 ```
-**A:** 
+**A:** The following:
 - Hotel Adlon, Berlin
 - Kulturbrauerei Berlin
 - AXICA Berlin 
