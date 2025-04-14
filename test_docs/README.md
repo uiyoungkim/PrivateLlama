@@ -2,13 +2,25 @@
 
 ## Prompt 1
 ``` 
+Which locations did I play at?
+```
+**A:** 
+- Hotel Adlon, Berlin
+- Kulturbrauerei Berlin
+- AXICA Berlin 
+
+---
+
+
+## Prompt 2
+``` 
 Is the invoice for GreenTech GmbH paid?  
 ```
 **A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
 
 ---
 
-## Prompt 2
+## Prompt 3
 ```
 When did I play for Max Müller at the Hotel Adlon in Berlin?  
 ```
@@ -16,7 +28,7 @@ When did I play for Max Müller at the Hotel Adlon in Berlin?
 
 ---
 
-## Prompt 3
+## Prompt 4
 ```
 Is there an invoice for Lisa Sommer?  
 ```
@@ -24,7 +36,7 @@ Is there an invoice for Lisa Sommer?
 
 ---
 
-## Prompt 4
+## Prompt 5
 ```
  How much did I charge GreenTech GmbH?  
 ```
