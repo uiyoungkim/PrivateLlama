@@ -2,9 +2,9 @@
 
 ## Prompt 1
 ``` 
-Is there an invoice for Lisa Sommer?  
+Is the invoice for GreenTech GmbH paid?  
 ```
-**A:** Yes, there is an invoice for Lisa Sommer for an event on March 15, 2025.
+**A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
 
 ---
 
@@ -18,9 +18,9 @@ When did I play for Max Müller?
 
 ## Prompt 3
 ```
- Is the invoice for GreenTech GmbH paid?  
+Is there an invoice for Lisa Sommer?  
 ```
-**A:** No, the invoice for GreenTech GmbH’s event on March 22, 2025 is still unpaid.
+**A:** Yes, there is an invoice for Lisa Sommer for an event on March 15, 2025.  
 
 ---
 
