@@ -10,7 +10,7 @@ Is the invoice for GreenTech GmbH paid?
 
 ## Prompt 2
 ```
-When did I play for Max Müller?  
+When did I play for Max Müller at the Hotel Adlon in Berlin?  
 ```
 **A:** You played for Max Müller on March 8, 2025.
 
