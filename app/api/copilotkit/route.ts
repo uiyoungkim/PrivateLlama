@@ -4,8 +4,6 @@ import {
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
 
-import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-import { ChatOpenAI } from "@langchain/openai";
 import { ChatOllama } from "@langchain/ollama";
 import { NextRequest } from "next/server";
 
@@ -44,7 +42,7 @@ const runtime = new CopilotRuntime({
             requestOptions: {
               useMmap: true, // use_mmap 1
               numThread: 6, // num_thread 6
-              numGpu: 1, // num_gpu 1
+              numGpu: 2, // num_gpu 1
             },
           });
 

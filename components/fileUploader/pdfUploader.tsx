@@ -80,7 +80,7 @@ export default function FileUploader({
       </label>
       {selectedFile && (
         <p className="text-sm text-gray-700 ml-2">
-          Selected: {selectedFile.name}
+          Hochgeladen: {selectedFile.name}
         </p>
       )}
     </div>
