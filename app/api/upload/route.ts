@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
-import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+// import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 import { OllamaEmbeddings } from "@langchain/ollama";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
+// import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 
