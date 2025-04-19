@@ -1,6 +1,10 @@
 # 🧠 Lokales Setup – AI Assistant Projekt
 
 Mit dieser Anleitung kannst du das Projekt lokal starten, inklusive Supabase & Ollama für RAG (Retrieval Augmented Generation).
+Die vollständige .env-Datei sowie weitere Konfigurationen sind in diesem Repository nicht enthalten.
+Wenn Sie das Projekt verwenden möchten, kontaktieren Sie uns bitte direkt, um Zugang zu den notwendigen Umgebungsvariablen und Einstellungen zu erhalten.
+
+⚠️ Für Windows-Nutzer muss außerdem eine Zeile im Docker-Setup angepasst werden. Weitere Informationen dazu finden Sie in der Dokumentation oder erhalten Sie auf Anfrage.
 
 ---
 
